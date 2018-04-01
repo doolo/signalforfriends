@@ -47,6 +47,7 @@ echo -n "  " >> $tmpdir/Signal-website-release-latest.apk.sha256
 echo "Signal-website-release-latest.apk" >> $tmpdir/Signal-website-release-latest.apk.sha256
 
 # Check integrity against the downloaded file
+cd $tmpdir
 sha256sum -c $tmpdir/Signal-website-release-latest.apk.sha256
 
 if [ $? -ne 0 ]; then
@@ -68,6 +69,8 @@ mv $tmpdir/Signal-website-release-latest.apk $rootdir/Signal-website-release-lat
 mv $tmpdir/latest.json $rootdir/latest.json
 
 # Publish the code
+
+cd $rootdir
 git add $rootdir/Signal-website-release-latest.apk.sha256 $rootdir/Signal-website-release-latest.apk $rootdir/latest.json
 
 git commit -m "Update to Signal $latest_version"
