@@ -20,5 +20,4 @@ It would be really helpful if the `run.sh` script could be executed regularly to
 Later, one can either run the `run.sh` by:
 
     ./run.sh
-
 Or simply setup a service to run the `run.sh` routinely.
