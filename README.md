@@ -7,7 +7,7 @@ https://github.com/doolo/signalforfriends/raw/master/Signal-website-release-late
 https://signal.org/android/apk/
 
 ## Contribution
-It would be really helpful if the `run.sh` script could be executed regularly to keep the binary apk file up-to-date.
+It can be really helpful if the `run.sh` script could be executed regularly to keep the binary apk file up-to-date:
 
 ### First Time
 
