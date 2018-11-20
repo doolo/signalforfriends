@@ -9,8 +9,13 @@ function cleanup {
 }
 trap cleanup EXIT
 
+cd "$(dirname "$0")"
+
 git_remote=origin
 git_branch=master
+
+# Change to the dir where the script is located
+cd "$(dirname "$0")"
 
 # Pull from git first to make sure everything is up to date
 git pull $git_remote $git_branch
