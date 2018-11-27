@@ -9,8 +9,6 @@ function cleanup {
 }
 trap cleanup EXIT
 
-cd "$(dirname "$0")"
-
 git_remote=origin
 git_branch=master
 
