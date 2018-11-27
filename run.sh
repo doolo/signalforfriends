@@ -38,6 +38,7 @@ latest_version=$(cat $tmpdir/latest.json | python3 -c "import sys, json; print(j
 current_version=$(cat $rootdir/latest.json | python3 -c "import sys, json; print(json.load(sys.stdin)['versionName'], end='')")
 
 if [ "$latest_version" == "$current_version" ]; then
+    echo -n "$(date) " | tee -a log.txt
     echo "[NOTICE]: The apk file is already up-to-date." | tee -a log.txt
     exit 0
 fi
