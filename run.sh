@@ -83,3 +83,7 @@ git add $rootdir/Signal-website-release-latest.apk.sha256 $rootdir/Signal-websit
 git commit -m "Update to Signal $latest_version"
 
 git push $remote $branch
+
+echo -n "$(date) " | tee -a log.txt
+echo "[INFO]: Pushed Signal $latest_version to Github." | tee -a log.txt
+
