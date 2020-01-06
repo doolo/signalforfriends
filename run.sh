@@ -23,7 +23,7 @@ git pull $git_remote $git_branch
 
 if [ $? -ne 0 ]; then
     echo -n "$(date) " | tee -a log.txt
-    echo "[WARRNING]: Have troubble when pulling from the reposiotry." | tee -a log.txt
+    echo "[WARNING]: Have troubble when pulling from the reposiotry." | tee -a log.txt
     exit 1
 fi
 
@@ -60,7 +60,7 @@ sha256sum -c $tmpdir/Signal-website-release-latest.apk.sha256
 
 if [ $? -ne 0 ]; then
     echo -n "$(date) " | tee -a log.txt
-    echo "[WARRNING]: The apk file is corrupted." | tee -a log.txt
+    echo "[WARNING]: The apk file is corrupted." | tee -a log.txt
     exit 1
 fi
 
@@ -73,12 +73,12 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-# Overwritten the old files with the latest one
+# Overwrite the old files with the latest one
 mv $tmpdir/Signal-website-release-latest.apk.sha256 $rootdir/Signal-website-release-latest.apk.sha256
 mv $tmpdir/Signal-website-release-latest.apk $rootdir/Signal-website-release-latest.apk
 mv $tmpdir/latest.json $rootdir/latest.json
 
-# Publish the code
+# Push to Repo
 
 cd $rootdir
 git add $rootdir/Signal-website-release-latest.apk.sha256 $rootdir/Signal-website-release-latest.apk $rootdir/latest.json
